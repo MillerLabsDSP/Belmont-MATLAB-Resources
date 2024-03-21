@@ -1,0 +1,8 @@
+Nrows=3;
+
+for i=1:Nrows
+    for j=1:i
+        fprintf('*')
+    end
+    fprintf('\n')
+end

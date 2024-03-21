@@ -1,0 +1,49 @@
+% Zachary Miller
+% HW1, Q3
+
+i = 1;                                                                          % Initialize "i" variable for loo[
+
+while(i < 6)                                                                    % Creating a 5-space vector using a loop
+
+     numbers(i) = input('Input a number: ');
+     i = i + 1;
+
+end
+
+i = 1;                                                                          % Reinitializing "i" variable as 1 for new loop
+
+sumPositive = 0; sumNegative = 0; sumZero = 0; posCounter = 0; negCounter = 0;
+
+while(i < 6)                                                                    % Summing loop (conditionally)
+
+     if(i == 1 && numbers(i) > 0)                                               % First number if positive
+        sumPositive = numbers(i);
+        posCounter = 1;
+        i = i + 1;
+     elseif(i == 1 && numbers(i) < 0)                                           % First number if negative
+        sumNegative = numbers(i);
+        negCounter = 1;
+        i = i + 1;
+     elseif(i>1 && numbers(i) > 0)                                              % Summing numbers 2-5 if one is positive
+        sumPositive = sumPositive + numbers(i);
+        posCounter = posCounter + 1;
+        i = i + 1;
+     elseif(i>1 && numbers(i) < 0)                                              % Summing numbers 2-5 if one is negative
+        sumNegative = sumNegative + numbers(i);
+        negCounter = negCounter + 1;
+        i = i + 1;
+     else                                                                       % Graveyard for zeros becuase they can't be included in the summation process :)
+        sumZero = sumZero + numbers(i);
+        zeroCounter = 1;
+        i = i + 1;
+     end
+end
+
+avgPositive = sumPositive/posCounter;                                           % Calculating averages
+avgNegative = sumNegative/negCounter;
+
+disp(avgPositive); disp(avgNegative);                                           % Printing final values
+
+
+
+

@@ -1,0 +1,14 @@
+mat=randi(99,3,5);
+
+Nrows=3; Ncolumns=5;
+
+for i=1:Nrows
+    for j=1:Ncolumns
+        fprintf('%2.0d ', mat(i,j));
+    end
+    fprintf('\n')
+end
+
+% print check test
+
+disp(mat);

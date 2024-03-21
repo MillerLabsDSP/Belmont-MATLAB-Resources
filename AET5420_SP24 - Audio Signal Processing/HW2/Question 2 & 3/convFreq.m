@@ -13,7 +13,7 @@ function [y] = convFreq(x,h)
     h = [h;zeros(N-1,1)]; % impulse response
 
     % Time-domain to freq-domain
-    X = myradix2dft(x); 
+    X = fft(x); 
     H = fft(h);
 
     % Freq-domain to time-domain
