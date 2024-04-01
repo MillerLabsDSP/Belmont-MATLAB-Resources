@@ -19,7 +19,6 @@ for n=1:N
         y(n,1) = x(n,1);
     else
         y(n,1) = x(n,1) - x(n-d,1);
-
     end
 end
 

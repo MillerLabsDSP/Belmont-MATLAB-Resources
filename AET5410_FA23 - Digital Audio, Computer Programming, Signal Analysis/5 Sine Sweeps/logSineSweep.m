@@ -18,4 +18,4 @@ for i=1:N
 end
 
 plot(sine);
-% sound(sine,48000);
+sound(sine,Fs);

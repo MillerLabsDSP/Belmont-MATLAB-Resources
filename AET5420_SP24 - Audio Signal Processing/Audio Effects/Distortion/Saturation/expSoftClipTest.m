@@ -32,4 +32,4 @@ title('Output');
 % plot(x,x,x,y);
 % title('Characteristic Curve');
 
-% sound(x,Fs);
+sound(y,Fs);

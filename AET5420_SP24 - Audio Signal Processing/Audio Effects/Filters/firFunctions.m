@@ -7,8 +7,8 @@ clear; clc; close all;
 % Normalized 
 Fs = 48000;
 Nyq = Fs/2;
-f1Hz = 1000;
-f2Hz = 10000;
+f1Hz = 5000;
+f2Hz = 18000;
 f1Norm = f1Hz/Nyq;
 f2Norm = f2Hz/Nyq;
 
@@ -19,27 +19,27 @@ f2Norm = f2Hz/Nyq;
                  % 1kHz would be 1/24 on the normalized
                  % scale when Fs = 48000.
 
-[b] = fir1(4,0.5); % returns b0 and b1
+% [b] = fir1(4,0.5); % returns b0 and b1
 % h = [1 1];
 % freqz(h) % boost of 6dB in lows
 % stem(b);
 
-% [b] = fir1(48,[f1Norm,f2Norm],'stop'); % bandpass/bandstop
-% freqz(b);
+[b] = fir1(30,[f1Norm,f2Norm],'bandpass'); % bandpass/bandstop
+freqz(b);
 
 %% fir2 example
-order = 1000;
-freq = [0 500 1000 2000 3000 5000 Fs/2];
-freqNorm = freq/Nyq;
-dBAmp = [6 6 0 0 -10 0 0];
-amp = 10.^(dBAmp./20);
+% order = 1000;
+% freq = [0 500 1000 2000 3000 5000 Fs/2];
+% freqNorm = freq/Nyq;
+% dBAmp = [6 6 0 0 -10 0 0];
+% amp = 10.^(dBAmp./20);
 
 % [b] = fir2(order,freqNorm,amp);
 
-b = [1 1];
+% b = [1 1];
 
 % Plot log frequency, dB amplitude
-[H,W] = freqz(b,1,2048,Fs); % H = amp and phase, W = array of frequencies
+% [H,W] = freqz(b,1,2048,Fs); % H = amp and phase, W = array of frequencies
                             % 2048 is FFT size (power of 2)
 
 % Amplitude plot

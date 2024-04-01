@@ -12,5 +12,10 @@ xLin = chirp(t,0,10,22000).';
 
 % Logarithmic
 xLog = chirp(t,1,10,22000,'logarithmic').';
+N = length(xLog);
 
-audiowrite('logsweep.wav',xLog,Fs);
+% Apply fade-in/fade-out
+fade = [linspace(0,1,10000).';ones(N-20000,1);linspace(1,0,10000).'];
+y = xLog .* fade;
+
+audiowrite('logsweep - with fades.wav',y,Fs);

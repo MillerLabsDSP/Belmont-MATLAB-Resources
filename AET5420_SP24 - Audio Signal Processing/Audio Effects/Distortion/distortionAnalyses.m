@@ -2,7 +2,7 @@
 % Zachary Miller
 % 22 Jan 2024
 
-clear; clc; clear all;
+clear; clc; close all;
 
 % Sine wave input -> "fuzz effect" -> square wave output
 Fs = 48000;
