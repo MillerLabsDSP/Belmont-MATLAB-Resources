@@ -1,4 +1,4 @@
-%% tubeScreamerTone.m
+%% IbanezTubeScreamer_ToneControl_DiscreteKirchhoff.m
 % Zachary Miller
 % 25 March 2024
 

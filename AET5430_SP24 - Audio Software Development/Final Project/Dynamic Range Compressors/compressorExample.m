@@ -8,8 +8,8 @@
 [in,Fs] = audioread('AcGtr.wav');
 
 % Parameters for compressor
-T = -15; % dBFS
-R = 10;
+T = -25; % dBFS
+R = 8;
 
 % Initialize separate attack/release times
 attackTime = 0.05; % in seconds
